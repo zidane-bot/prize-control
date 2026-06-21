@@ -1,0 +1,51 @@
+name: precision
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^3.10.0
+  firebase_auth: ^5.4.1
+  cloud_firestore: ^5.6.5
+  google_sign_in: ^6.2.1
+  google_fonts: ^6.2.1
+  provider: ^6.1.2
+  app_links: ^6.3.2
+  device_info_plus: ^11.4.1
+  intl: ^0.20.2
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.5.5
+  local_auth: ^2.3.0
+  firebase_database: ^11.3.10
+  http: ^1.6.0
+  geolocator: ^13.0.2
+  flutter_staggered_grid_view: ^0.7.0
+  fl_chart: ^1.2.0
+  flutter_secure_storage: ^9.2.2
+  crypto: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter:
+  uses-material-design: true
+  
+  # Bagian ini gw aktifin biar lu bisa masukin logo Google PNG di folder assets/
+  assets:
+    - assets/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+  min_sdk_android: 21

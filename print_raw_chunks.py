@@ -1,0 +1,24 @@
+import json
+import os
+
+log_path = r"C:\Users\Marli\.gemini\antigravity\brain\91c80f48-16b6-49c4-a02e-696ed9316464\.system_generated\logs\transcript.jsonl"
+
+with open(log_path, 'r', encoding='utf-8') as f:
+    for line in f:
+        try:
+            obj = json.loads(line)
+            step = obj.get("step_index")
+            if step in [714, 879, 985]:
+                print(f"\n=== STEP {step} (Raw chunks) ===")
+                tool_calls = obj.get("tool_calls", [])
+                for tc in tool_calls:
+                    args = tc.get("args", {})
+                    chunks_str = args.get("ReplacementChunks", "")
+                    print("Length:", len(chunks_str))
+                    # print first 600 and last 600 chars
+                    print("Start:")
+                    print(chunks_str[:600])
+                    print("End:")
+                    print(chunks_str[-600:])
+        except Exception as e:
+            pass
